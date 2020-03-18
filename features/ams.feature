@@ -1,7 +1,7 @@
 Feature: Automatizacion de ams
 
 
-    Scenario: Hacer una pregunta con undergrud text
+    Scenario: Hacer una pregunta con undergraded text
         Given Ingresar al sitio web sapling con usuario admin
         When Click raptor item
         And click add
