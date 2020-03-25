@@ -2,18 +2,12 @@ const webdriver = require("selenium-webdriver");
 const { Given, When, Then } = require("cucumber");
 const { assert } = require("chai");
 var driver;
-<<<<<<< HEAD
-=======
-require("chromedriver");
-var { setDefaultTimeout } = require('cucumber');
-setDefaultTimeout(60 * 1000);
-const { Builder, By, Key, Until } = require('selenium-webdriver');
->>>>>>> d98d8fd020bcec5c2490d16f737a51f389699fe4
 
 require("chromedriver");
 var { setDefaultTimeout } = require('cucumber');
 setDefaultTimeout(60 * 1000);
-const { Builder, By, Key, until } = require('selenium-webdriver');
+const { Builder, By, Key, Until } = require('selenium-webdriver');
+
 
 Given(/^Inicio sesion en instagram con usuario "(.*)" y contraseña "(.*)"$/, async function (usuario, password) {
   
@@ -81,3 +75,8 @@ When('poner me gusta en la primer publicación', async function () {
     botonMeGusta.click();
 });
 
+Then('Verificar que se haya puesto Me Gusta', async function () {
+    var botonMeGusta = this.driver.findElement(By.xpath('//svg[@aria-label="Ya no me gusta"]')); //Comentario: este xpath va a fallar
+    var atributoAriaLabel = botonMeGusta.getAttribute('aria-label');
+    await assert.equal(atributoAriaLabel , 'Ya no me gusta', 'No se pudo poner Me gusta');
+}); 

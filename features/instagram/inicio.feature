@@ -18,6 +18,7 @@
         Given Inicio sesion en instagram
         When saltear cartel
         And poner me gusta en la primer publicación
+        Then Verificar que se haya puesto Me Gusta
 
     Scenario: Comentar publicaciones
 
