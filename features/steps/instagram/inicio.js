@@ -2,6 +2,13 @@ const webdriver = require("selenium-webdriver");
 const { Given, When, Then } = require("cucumber");
 const { assert } = require("chai");
 var driver;
+<<<<<<< HEAD
+=======
+require("chromedriver");
+var { setDefaultTimeout } = require('cucumber');
+setDefaultTimeout(60 * 1000);
+const { Builder, By, Key, Until } = require('selenium-webdriver');
+>>>>>>> d98d8fd020bcec5c2490d16f737a51f389699fe4
 
 require("chromedriver");
 var { setDefaultTimeout } = require('cucumber');
@@ -64,4 +71,13 @@ Then ('Verificar que se haya dejado de seguir', async function (){
   var textoBoton = Seguir.getText();
   assert.equal(textoBoton, 'Seguir','Esta mal. No dejó de seguir al usuario');
 });
-        
+When('seguir a sus seguidores', function () {
+    // Write code here that turns the phrase above into concrete actions
+    return 'pending';
+});
+
+When('poner me gusta en la primer publicación', async function () {
+    var botonMeGusta = this.driver.findElement(By.xpath('//svg[@aria-label="Me gusta"]')); //Comentario: este xpath va a fallar
+    botonMeGusta.click();
+});
+
