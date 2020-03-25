@@ -10,6 +10,9 @@
     Scenario:  Probar seguir y dejar de seguir gente
 
     Scenario: Poner MG en publicaciones
+        Given Inicio sesion en instagram
+        When saltear cartel
+        And poner me gusta en la primer publicación
 
     Scenario: Comentar publicaciones
 
