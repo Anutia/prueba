@@ -1,5 +1,10 @@
 Feature: Automatizacion de ams
 
+    Scenario: Recorrer la lista id y seleccionar los 3 primeros items
+             Given Inicio sesion en ams con usuario admin
+             When Seleccionar los "3" primeros items de la lista
+             And Ir a view selected items
+             Then Verificar que los "3" se encuentren en view selected items
 
     Scenario: Hacer una pregunta con undergraded text
        Given Inicio sesion en ams con usuario admin
